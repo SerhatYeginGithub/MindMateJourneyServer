@@ -19,6 +19,8 @@ public static class Registration
         services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<AppDbContext>());
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IContentRepository, ContentRepository>();
+        services.AddScoped<IContentService, ContentService>();
         services.AddAutoMapper(typeof(MindMateJourney.Persistance.AssemblyReference).Assembly);
 
     }

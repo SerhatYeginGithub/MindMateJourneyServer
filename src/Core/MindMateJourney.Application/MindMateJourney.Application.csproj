@@ -13,11 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\CategoryFeatures\Queries\" />
+    <ProjectReference Include="..\MindMateJourney.Domain\MindMateJourney.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MindMateJourney.Domain\MindMateJourney.Domain.csproj" />
+    <Folder Include="Features\ContentFeatures\Queries\GetAllContentsQuery\" />
   </ItemGroup>
 
 </Project>

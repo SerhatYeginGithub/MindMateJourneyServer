@@ -6,5 +6,5 @@ public sealed class Category : Entity
 {
     public string Name { get; set; }
     
-    ICollection<Content> Contents { get; set; }
+    public ICollection<Content> Contents { get; set; } 
 }

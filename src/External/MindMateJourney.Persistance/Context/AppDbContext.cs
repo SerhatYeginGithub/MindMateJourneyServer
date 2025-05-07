@@ -7,8 +7,8 @@ namespace MindMateJourney.Persistance.Context;
 
 public sealed class AppDbContext : DbContext, IUnitOfWork
 {
-    DbSet<Content> Contents { get; set; }
-    DbSet<Category> Categories { get; set; }
+    public DbSet<Content> Contents { get; set; }
+    public DbSet<Category> Categories { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
@@ -26,11 +26,11 @@ public sealed class AppDbContext : DbContext, IUnitOfWork
         {
             if (entry.State == EntityState.Added)
                 entry.Property(p => p.CreatedAt)
-                       .CurrentValue = DateTime.UtcNow;
+                       .CurrentValue = DateTime.Now;
             if (entry.State == EntityState.Modified)
                 entry.Property(p => p.UpdatedAt)
-                    .CurrentValue = DateTime.UtcNow;
-
+                    .CurrentValue = DateTime.Now;
+            entry.Property(p => p.CreatedAt).IsModified = false;
         }
 
         return base.SaveChangesAsync(cancellationToken);
