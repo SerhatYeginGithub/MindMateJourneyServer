@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using System.Text;
+using System.Text.Json;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MindMateJourney.Application.Features.ContentFeatures.Commands.CreateContentCommand;
 using MindMateJourney.Application.Features.ContentFeatures.Commands.DeleteContentCommand;
@@ -51,4 +53,5 @@ public sealed class ContentsController : ApiController
         var response = await _mediator.Send(new GetAllContentQuery(pageNumber, pageSize), cancellationToken);
         return Ok(response);
     }
+
 }

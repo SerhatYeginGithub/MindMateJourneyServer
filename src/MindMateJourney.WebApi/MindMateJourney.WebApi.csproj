@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\MindMateJourney.Application\MindMateJourney.Application.csproj" />
+    <ProjectReference Include="..\External\MindMateJourney.Infrastructure\MindMateJourney.Infrastructure.csproj" />
     <ProjectReference Include="..\External\MindMateJourney.Persistance\MindMateJourney.Persistance.csproj" />
     <ProjectReference Include="..\External\MindMateJourney.Presentation\MindMateJourney.Presentation.csproj" />
   </ItemGroup>
