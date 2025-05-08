@@ -16,8 +16,4 @@
     <ProjectReference Include="..\MindMateJourney.Domain\MindMateJourney.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\ContentFeatures\Queries\GetAllContentsQuery\" />
-  </ItemGroup>
-
 </Project>

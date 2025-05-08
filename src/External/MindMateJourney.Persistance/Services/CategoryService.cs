@@ -67,6 +67,8 @@ public sealed class CategoryService : ICategoryService
         List<Content> contents = await _contentRepository
        .Where(x => x.CategoryId == request.Id)
        .OrderByDescending(x => x.CreatedAt)
+       .Skip((request.PageNumber - 1) * request.PageSize)
+       .Take(request.PageSize)
        .ToListAsync(cancellationToken);
 
         return new GetCategoryByIdDto(

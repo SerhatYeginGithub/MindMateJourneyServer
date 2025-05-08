@@ -40,9 +40,9 @@ public sealed class CategoriesController : ApiController
     }
 
     [HttpGet("GetCategoryById/{id}")]
-    public async Task<IActionResult> GetCategoryById(string id, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetCategoryById(CancellationToken cancellationToken, string id, int PageNumber = 1, int PageSize = 10)
     {
-        GetCategoryByIdQuery request = new(id);
+        GetCategoryByIdQuery request = new(id, PageNumber, PageSize);
         var response = await _mediator.Send(request, cancellationToken);
         return Ok(response);
     }
