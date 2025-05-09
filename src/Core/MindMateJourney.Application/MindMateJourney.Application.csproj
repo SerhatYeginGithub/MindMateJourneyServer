@@ -16,4 +16,8 @@
     <ProjectReference Include="..\MindMateJourney.Domain\MindMateJourney.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\AuthFeatures\Queries\" />
+  </ItemGroup>
+
 </Project>

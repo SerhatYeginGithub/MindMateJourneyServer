@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MindMateJourney.Application.DTOS;
+using MindMateJourney.Application.Features.AuthFeatures.Commands.RegisterCommand;
 using MindMateJourney.Application.Features.CategoryFeatures.Commands.CreateCategoryCommand;
 using MindMateJourney.Application.Features.CategoryFeatures.Commands.UpdateCategoryCommand;
 using MindMateJourney.Application.Features.ContentFeatures.Commands.CreateContentCommand;
@@ -19,5 +20,6 @@ public sealed class MappingProfile : Profile
         CreateMap<Content, ContentDto>().ReverseMap();
         CreateMap<Content, CreateContentCommand>().ReverseMap();
         CreateMap<UpdateContentCommand, Content>().ReverseMap();
+        CreateMap<RegisterCommand, AppUser>().ReverseMap();
     }
 }

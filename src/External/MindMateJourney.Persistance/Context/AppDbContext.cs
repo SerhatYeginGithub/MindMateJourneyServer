@@ -1,11 +1,13 @@
 ﻿using GenericRepository;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MindMateJourney.Domain.Abstraction;
 using MindMateJourney.Domain.Entities;
 
 namespace MindMateJourney.Persistance.Context;
 
-public sealed class AppDbContext : DbContext, IUnitOfWork
+public sealed class AppDbContext : IdentityDbContext<AppUser, IdentityRole, string>, IUnitOfWork
 {
     public DbSet<Content> Contents { get; set; }
     public DbSet<Category> Categories { get; set; }
@@ -16,6 +18,12 @@ public sealed class AppDbContext : DbContext, IUnitOfWork
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
+        modelBuilder.Ignore<IdentityUserLogin<string>>();
+        modelBuilder.Ignore<IdentityUserRole<string>>();
+        modelBuilder.Ignore<IdentityUserClaim<string>>();
+        modelBuilder.Ignore<IdentityUserToken<string>>();
+        modelBuilder.Ignore<IdentityRoleClaim<string>>();
+        modelBuilder.Ignore<IdentityRole<string>>();
     }
 
 

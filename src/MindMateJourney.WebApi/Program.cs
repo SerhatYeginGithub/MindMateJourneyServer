@@ -5,6 +5,9 @@ using MyCar.WebApi.Middleware;
 using MindMateJourney.WebApi;
 using Microsoft.AspNetCore.Mvc;
 using MindMateJourney.Infrastructure;
+using Microsoft.AspNetCore.Identity;
+using MindMateJourney.Domain.Entities;
+using MindMateJourney.Persistance.Context;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,6 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddPersistance(builder.Configuration);
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddServices();

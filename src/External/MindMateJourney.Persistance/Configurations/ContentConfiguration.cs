@@ -25,7 +25,7 @@ public sealed class ContentConfiguration : IEntityTypeConfiguration<Content>
             .IsRequired();
 
         builder.HasOne(c => c.Category)
-            .WithMany()
+            .WithMany(c => c.Contents)
             .HasForeignKey(c => c.CategoryId)
             .OnDelete(DeleteBehavior.Cascade);
 
