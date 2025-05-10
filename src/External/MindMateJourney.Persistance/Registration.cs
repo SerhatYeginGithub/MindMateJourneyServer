@@ -23,6 +23,7 @@ public static class Registration
         services.AddScoped<IContentRepository, ContentRepository>();
         services.AddScoped<IContentService, ContentService>();
         services.AddAutoMapper(typeof(MindMateJourney.Persistance.AssemblyReference).Assembly);
+        
 
     }
 }
