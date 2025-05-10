@@ -50,7 +50,7 @@ builder.Services.AddSwaggerGen(setup =>
 });
 
 builder.Services.AddPersistance(builder.Configuration);
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddIdentity<AppUser, Role>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddServices();

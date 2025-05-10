@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\MindMateJourney.Application\MindMateJourney.Application.csproj" />
+    <ProjectReference Include="..\MindMateJourney.Infrastructure\MindMateJourney.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

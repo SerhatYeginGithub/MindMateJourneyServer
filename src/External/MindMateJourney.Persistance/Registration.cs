@@ -23,7 +23,10 @@ public static class Registration
         services.AddScoped<IContentRepository, ContentRepository>();
         services.AddScoped<IContentService, ContentService>();
         services.AddAutoMapper(typeof(MindMateJourney.Persistance.AssemblyReference).Assembly);
-        
+
+        services.AddScoped<IRoleService, RoleService>();
+        services.AddScoped<IUserRoleService, UserRoleService>();
+        services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 
     }
 }

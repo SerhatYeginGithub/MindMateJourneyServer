@@ -7,6 +7,7 @@ using MindMateJourney.Application.Features.ContentFeatures.Commands.DeleteConten
 using MindMateJourney.Application.Features.ContentFeatures.Commands.UpdateContentCommand;
 using MindMateJourney.Application.Features.ContentFeatures.Queries.GetAllContentsQuery;
 using MindMateJourney.Application.Features.ContentFeatures.Queries.GetContentByIdQuery;
+using MindMateJourney.Infrastructure.Authorization;
 using MindMateJourney.Presentation.Abstractions;
 
 namespace MindMateJourney.Presentation.Controllers;
@@ -20,6 +21,7 @@ public sealed class ContentsController : ApiController
     }
 
     [HttpPost("[action]")]
+    [RoleFilter("Admin")]
     public async Task<IActionResult> CreateContent(CreateContentCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -27,6 +29,7 @@ public sealed class ContentsController : ApiController
     }
 
     [HttpPut("[action]")]
+    [RoleFilter("Admin")]
     public async Task<IActionResult> UpdateContent(UpdateContentCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -34,6 +37,7 @@ public sealed class ContentsController : ApiController
     }
 
     [HttpDelete("[action]")]
+    [RoleFilter("Admin")]
     public async Task<IActionResult> DeleteContent(string id, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(new DeleteContentCommand(id), cancellationToken);

@@ -5,6 +5,7 @@ using MindMateJourney.Application.Features.CategoryFeatures.Commands.DeleteCateg
 using MindMateJourney.Application.Features.CategoryFeatures.Commands.UpdateCategoryCommand;
 using MindMateJourney.Application.Features.CategoryFeatures.Queries.GetAllCategoriesQuery;
 using MindMateJourney.Application.Features.CategoryFeatures.Queries.GetCategoryById;
+using MindMateJourney.Infrastructure.Authorization;
 using MindMateJourney.Presentation.Abstractions;
 
 namespace MindMateJourney.Presentation.Controllers;
@@ -19,6 +20,7 @@ public sealed class CategoriesController : ApiController
     }
 
     [HttpPost("[action]")]
+    [RoleFilter("Admin")]
     public async Task<IActionResult> CreateCategory(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -26,6 +28,7 @@ public sealed class CategoriesController : ApiController
     }
 
     [HttpPut("[action]")]
+    [RoleFilter("Admin")]
     public async Task<IActionResult> UpdateCategory(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -48,6 +51,7 @@ public sealed class CategoriesController : ApiController
     }
 
     [HttpDelete("[action]")]
+    [RoleFilter("Admin")]
     public async Task<IActionResult> DeleteCategory(string id, CancellationToken cancellationToken)
     {
         DeleteCategoryCommand request = new(id);

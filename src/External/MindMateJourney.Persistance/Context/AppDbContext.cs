@@ -7,7 +7,7 @@ using MindMateJourney.Domain.Entities;
 
 namespace MindMateJourney.Persistance.Context;
 
-public sealed class AppDbContext : IdentityDbContext<AppUser, IdentityRole, string>, IUnitOfWork
+public sealed class AppDbContext : IdentityDbContext<AppUser, Role, string>, IUnitOfWork
 {
     public DbSet<Content> Contents { get; set; }
     public DbSet<Category> Categories { get; set; }
