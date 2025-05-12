@@ -16,6 +16,6 @@ public sealed class VerifyCodeCommandHandler : IRequestHandler<VerifyCodeCommand
     public async Task<MessageResponse> Handle(VerifyCodeCommand request, CancellationToken cancellationToken)
     {
         await _authService.VerifyCodeAsync(request, cancellationToken);
-        return new("User registered successfully.");
+        return new("User registered successfully.", true);
     }
 }

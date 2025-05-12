@@ -1,5 +1,4 @@
-﻿using GenericRepository;
-using MindMateJourney.Domain.Entities;
+﻿using MindMateJourney.Domain.Entities;
 
 namespace MindMateJourney.Application.Repositories;
 

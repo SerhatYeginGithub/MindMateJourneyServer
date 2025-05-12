@@ -9,6 +9,6 @@ public sealed class CreateContentCommandHandler(IContentService contentService) 
     public async Task<MessageResponse> Handle(CreateContentCommand request, CancellationToken cancellationToken)
     {
         await contentService.CreateAsync(request, cancellationToken);
-        return new("Content Created Successfully");
+        return new("Content Created Successfully", true);
     }
 }

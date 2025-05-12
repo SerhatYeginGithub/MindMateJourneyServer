@@ -17,6 +17,6 @@ public sealed class CreateUserRoleCommandHandler : IRequestHandler<CreateUserRol
     public async Task<MessageResponse> Handle(CreateUserRoleCommand request, CancellationToken cancellationToken)
     {
         await _userRoleService.CreateAsync(request, cancellationToken);
-        return new("Kullanıcıya rol başarıyla atandı!");
+        return new("Kullanıcıya rol başarıyla atandı!", true);
     }
 }

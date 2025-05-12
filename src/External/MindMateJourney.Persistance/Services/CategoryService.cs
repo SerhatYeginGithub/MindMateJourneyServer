@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using GenericRepository;
 using Microsoft.EntityFrameworkCore;
 using MindMateJourney.Application.DTOS;
 using MindMateJourney.Application.Features.CategoryFeatures.Commands.CreateCategoryCommand;

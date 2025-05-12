@@ -9,7 +9,7 @@ namespace MindMateJourney.Application.Features.CategoryFeatures.Commands.DeleteC
         public async Task<MessageResponse> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
         {
             await categoryService.DeleteAsync(request, cancellationToken);
-            return new("Category deleted successfully.");
+            return new("Category deleted successfully.", true);
         }
     }
 }

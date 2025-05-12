@@ -1,12 +1,12 @@
-﻿using GenericRepository;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MindMateJourney.Application.Repositories;
 using MindMateJourney.Domain.Entities;
+using MindMateJourney.Persistance.Abstractions;
 using MindMateJourney.Persistance.Context;
 
 namespace MindMateJourney.Persistance.Repositories;
 
-public sealed class CategoryRepository : Repository<Category, AppDbContext>, ICategoryRepository
+public sealed class CategoryRepository : Repository<Category>, ICategoryRepository
 {
     private readonly AppDbContext _context;
     public CategoryRepository(AppDbContext context) : base(context)

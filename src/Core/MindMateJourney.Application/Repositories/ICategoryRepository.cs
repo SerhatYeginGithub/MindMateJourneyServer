@@ -1,5 +1,4 @@
 ﻿using MindMateJourney.Domain.Entities;
-using GenericRepository;
 
 namespace MindMateJourney.Application.Repositories;
 

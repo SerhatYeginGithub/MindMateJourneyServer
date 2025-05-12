@@ -16,6 +16,6 @@ public sealed class UpdateContentCommandHandler : IRequestHandler<UpdateContentC
     public async Task<MessageResponse> Handle(UpdateContentCommand request, CancellationToken cancellationToken)
     {
         await _contentService.UpdateAsync(request, cancellationToken);
-        return new MessageResponse("Content Updated Successfully");
+        return new MessageResponse("Content Updated Successfully", true);
     }
 }

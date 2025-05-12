@@ -1,5 +1,4 @@
-﻿using GenericRepository;
-using MindMateJourney.Application.Features.UserRoleFeatures.Commands.CreateUserRoleCommand;
+﻿using MindMateJourney.Application.Features.UserRoleFeatures.Commands.CreateUserRoleCommand;
 using MindMateJourney.Application.Repositories;
 using MindMateJourney.Application.Services;
 using MindMateJourney.Domain.Entities;

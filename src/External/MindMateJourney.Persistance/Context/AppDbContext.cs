@@ -1,5 +1,4 @@
-﻿using GenericRepository;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MindMateJourney.Domain.Abstraction;
@@ -7,7 +6,7 @@ using MindMateJourney.Domain.Entities;
 
 namespace MindMateJourney.Persistance.Context;
 
-public sealed class AppDbContext : IdentityDbContext<AppUser, Role, string>, IUnitOfWork
+public sealed class AppDbContext : IdentityDbContext<AppUser, Role, string>
 {
     public DbSet<Content> Contents { get; set; }
     public DbSet<Category> Categories { get; set; }

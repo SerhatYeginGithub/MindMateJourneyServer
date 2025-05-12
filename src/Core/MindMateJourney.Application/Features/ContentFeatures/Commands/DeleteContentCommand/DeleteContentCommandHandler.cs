@@ -16,6 +16,6 @@ public sealed class DeleteContentCommandHandler : IRequestHandler<DeleteContentC
     public async Task<MessageResponse> Handle(DeleteContentCommand request, CancellationToken cancellationToken)
     {
         await _contentService.DeleteAsync(request, cancellationToken);
-        return new MessageResponse("Content Deleted Successfully");
+        return new MessageResponse("Content Deleted Successfully", true);
     }
 }

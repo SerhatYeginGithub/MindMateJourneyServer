@@ -1,9 +1,9 @@
-﻿using GenericRepository;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MindMateJourney.Application.Repositories;
 using MindMateJourney.Application.Services;
+using MindMateJourney.Persistance.Abstractions;
 using MindMateJourney.Persistance.Context;
 using MindMateJourney.Persistance.Repositories;
 using MindMateJourney.Persistance.Services;
@@ -16,7 +16,7 @@ public static class Registration
     {
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
-        services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<AppDbContext>());
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IAuthService, AuthService>();
@@ -27,6 +27,5 @@ public static class Registration
         services.AddScoped<IRoleService, RoleService>();
         services.AddScoped<IUserRoleService, UserRoleService>();
         services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-
     }
 }

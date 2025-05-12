@@ -16,6 +16,6 @@ public sealed class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategor
     public async Task<MessageResponse> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
         await _categoryService.UpdateAsync(request, cancellationToken);
-        return new("Category Updated Successfully.");
+        return new("Category Updated Successfully.", true);
     }
 }

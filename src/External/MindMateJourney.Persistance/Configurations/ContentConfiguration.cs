@@ -18,9 +18,6 @@ public sealed class ContentConfiguration : IEntityTypeConfiguration<Content>
             .IsRequired()
             .HasColumnType("nvarchar(max)");
 
-        builder.Property(c => c.Image)
-            .HasColumnType("varbinary(max)");
-
         builder.Property(c => c.CategoryId)
             .IsRequired();
 

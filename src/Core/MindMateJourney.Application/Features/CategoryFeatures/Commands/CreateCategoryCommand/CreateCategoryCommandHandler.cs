@@ -21,7 +21,7 @@ namespace MindMateJourney.Application.Features.CategoryFeatures.Commands.CreateC
         public async Task<MessageResponse> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             await _categoryService.CreateAsync(request, cancellationToken);
-            return new("Category created successfully");
+            return new("Category created successfully", true);
         }
     }
 }

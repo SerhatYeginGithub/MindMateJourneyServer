@@ -9,6 +9,6 @@ public sealed class LogoutCommandHandler(IAuthService authService) : IRequestHan
     public async Task<MessageResponse> Handle(LogoutCommand request, CancellationToken cancellationToken)
     {
         await authService.LogoutAsync(request, cancellationToken);
-        return new("User logout successfully.");
+        return new("User logout successfully.", true);
     }
 }

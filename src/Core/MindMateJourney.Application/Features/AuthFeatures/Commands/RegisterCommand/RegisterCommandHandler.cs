@@ -17,6 +17,6 @@ public sealed class RegisterCommandHandler : IRequestHandler<RegisterCommand, Me
     {
         await _authService.RegisterAsync(request, cancellationToken);
 
-        return new($"{request.Email} adresine doğrulama kodu gönderildi.");
+        return new($"{request.Email} adresine doğrulama kodu gönderildi.", true);
     }
 }
